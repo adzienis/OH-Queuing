@@ -1,0 +1,29 @@
+version: "3"
+services:
+  db:
+    image: postgres
+    environment:
+      - POSTGRES_USER=docker
+      - POSTGRES_DATABASE=docker
+      - POSTGRES_HOST_AUTH_METHOD=trust
+  redis:
+    image: redis
+  nginx:
+    build: 
+      context: ./nginx
+      dockerfile: Dockerfile.nginx
+    environment:
+      - PRIVATE_KEY_PASS=${PRIVATE_KEY_PASS}
+    ports:
+      - '80:80'
+      - '443:443'
+  server:
+    build:
+      context: server
+      dockerfile: Dockerfile
+    environment:
+      - RAILS_ENV=production
+      - RAILS_SERVE_STATIC_FILES=true
+    command: bash -c "bundle exec rails db:migrate && bundle
+                      exec rails s -e production --log-to-stdout"
+
