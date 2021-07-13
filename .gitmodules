@@ -1,0 +1,3 @@
+[submodule "OH-Queuing-Server"]
+	path = OH-Queuing-Server
+	url = https://github.com/adzienis/OH-Queuing-Server
