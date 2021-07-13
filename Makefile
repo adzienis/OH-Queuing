@@ -22,6 +22,9 @@ down_dev:
 console_dev:
 	cd server; bundle exec rails c
 
+server_dev:
+	cd server; bundle exec rails s --binding=0.0.0.0
+
 # TEST COMMANDS
 run_test:
 	docker-compose -p test -f docker-compose.test.yml up --force-recreate --remove-orphans
