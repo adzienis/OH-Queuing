@@ -19,7 +19,7 @@ services:
       - '443:443'
   server:
     build:
-      context: server
+      context: OH-Queuing-Server
       dockerfile: Dockerfile
     environment:
       - RAILS_ENV=production

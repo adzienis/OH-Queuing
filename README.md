@@ -10,24 +10,31 @@ This repository consists of a Makefile and a set of `docker-compose` files to he
 set everything up. Nginx is used as the reverse proxy. Each environment consists
 of a set of Docker containers.
 
+Make sure to clone this repo with `git clone --recurse-submodules`
+since the actual server is in the `OH-Queuing-Server`
+
+Before running any of these, cd into `OH-Queuing-Server`, and
+run `bundle install` (possibly `bundle install --path vendor`
+to keep dependencies local in the directory). 
+
 ## Development
 
 Some ports are exposed in the containers to help with connecting to the server/also
 debugging.
 
-To build: `make build_dev`
-To run: `make run_dev`
-To bring down: `make down_dev`
-To run the console: `make console_dev`
+To build: `make build_dev`  
+To run: `make run_dev`  
+To bring down: `make down_dev`  
+To run the console: `make console_dev`  
 
 The server itself is not in a container (yet). Therefore, to run it, enter:
 `make server_dev`
 
 ## Testing
 
-To build: `make build_test`
-To run: `make run_test`
-To bring down: `make down_test`
+To build: `make build_test`  
+To run: `make run_test`  
+To bring down: `make down_test`  
 
 ## Production
 
@@ -49,9 +56,7 @@ PRIVATE_KEY_PASS="password"
 ```
 Where "password" is for descryption.
 
-To build: `make build_prod`
-To run: `make run_prod`
-To bring down: `make down_prod`
-To run the console: `make console_prod`
-
-
+To build: `make build_prod`  
+To run: `make run_prod`  
+To bring down: `make down_prod`  
+To run the console: `make console_prod`  
