@@ -20,10 +20,11 @@ stop_dev:
 down_dev:
 	docker-compose -p development down
 console_dev:
-	cd OH-Queuing-Server; bundle exec rails c
-
+	cd OH-Queuing-Server; bundle exec rails 
 server_dev:
-	cd server; bundle exec rails s --binding=0.0.0.0
+	cd OH-Queuing-Server; bundle exec rails s --binding=0.0.0.0
+migrate_dev:
+	cd OH-Queuing-Server; bundle exec rails db:migrate
 
 # TEST COMMANDS
 run_test:

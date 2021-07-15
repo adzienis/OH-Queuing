@@ -3,9 +3,9 @@ services:
   db:
     image: postgres
     environment:
-      - POSTGRES_PASSWORD=docker
-      - POSTGRES_USER=docker
-      - POSTGRES_DATABASE=docker
+      - POSTGRES_USER=development
+      - POSTGRES_DATABASE=development
+      - POSTGRES_HOST_AUTH_METHOD=trust
     ports:
       - "5433:5432"
   redis:
