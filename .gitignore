@@ -1,3 +1,4 @@
 **/server
 .env
 **/private.key.enc
+.idea
